@@ -6,6 +6,9 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="left">
+        <a href="/">
+          <img src="../../assets/img/download.jpg">
+        </a>
       </div>
       <div class="right"></div>
     </div>

@@ -9,7 +9,11 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
-      path: '/',
+      path:'/',
+      redirect:'/home'
+    },
+    {
+      path: '/home',
       component: Home
     },
     {

@@ -1,31 +1,43 @@
 <script setup>
+import { useRoute, useRouter } from 'vue-router';
+
+const route = useRoute()
+const router = useRouter()
+const goTo = (path)=>{
+  router.replace(path)
+}
 
 </script>
 
 <template>
   <header class="header">
-    <router-link to="/#" class="header-logo">
+    <router-link to="/" class="header-logo">
       <img class="logo-icon" src="../../assets/img/download.jpg">
       <span class="logo-txt">dreaMTank株式会社</span>
     </router-link>
     <nav class="nav">
-      <router-link to="#/services" class="nav-item link-active">
+      <router-link to="/home" class="nav-item" :class="{link_active:'/home' === route.path}" 
+      @click="goTo('/home')">
         <span class="nav-item-title">ホーム</span>
         <span>Home</span>
       </router-link>
-      <router-link to="#/services" class="nav-item ">
+      <router-link to="/services" class="nav-item " :class="{link_active:'/services' === route.path}" 
+      @click="goTo('/services')">
         <span class="nav-item-title">事業内容</span>
         <span>Services</span>
       </router-link>
-      <router-link to="#/services" class="nav-item ">
+      <router-link to="/company" class="nav-item " :class="{link_active:'/company' === route.path}" 
+      @click="goTo('/company')">
         <span class="nav-item-title">企業情報</span>
         <span>Company</span>
       </router-link>
-      <router-link to="#/services" class="nav-item ">
+      <router-link to="/recruit" class="nav-item " :class="{link_active:'/recruit' === route.path}" 
+      @click="goTo('/recruit')">
         <span class="nav-item-title">採用情報</span>
         <span>Recruit</span>
       </router-link>
-      <router-link to="#/services" class="nav-item ">
+      <router-link to="/contact" class="nav-item " :class="{link_active:'/contact' === route.path}" 
+      @click="goTo('/contact')">
         <span class="nav-item-title">お問い合わせ</span>
         <span>contact</span>
       </router-link>
@@ -66,7 +78,7 @@
       padding: 20px 0;
       align-items: center;
       justify-content: center;
-      &.link-active{
+      &.link_active{
         background-color: #111;
         color: #fff
       }
