@@ -21,6 +21,12 @@ border: 0;
 font-size: 100%;
 font-weight: 400;
 vertical-align: baseline;
+margin: 0px;
+padding: 0px;
+border-width: 0px;
+border-style: initial;
+border-color: initial;
+border-image: initial;
 }
 a {
 text-decoration: none;
@@ -58,4 +64,7 @@ input, textarea, select {
   outline: none;
   font-family: inherit;
   font-size: inherit;
+}
+div{
+  
 }
