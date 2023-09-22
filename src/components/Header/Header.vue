@@ -53,6 +53,7 @@ const goTo = (path)=>{
   overflow: hidden;
   height: 70px;
   top: 0;
+  z-index: 100;
   justify-content:space-around;
   .header-logo{
     display: flex;
