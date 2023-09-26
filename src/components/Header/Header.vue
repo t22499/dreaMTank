@@ -1,6 +1,6 @@
 <script setup>
 import { useRoute, useRouter } from 'vue-router';
-import {ref} from 'vue';
+import {ref,computed} from 'vue';
 
 const route = useRoute()
 const router = useRouter()
@@ -14,6 +14,11 @@ const goTo = (path)=>{
 const iconChange = ()=>{
   iconState.value = !iconState.value
 }
+const path = computed(()=>{
+  let path  = route.path
+  let prefix = path.match(/\/[^/]+/);
+  return prefix ? prefix[0] : "";
+})
 
 
 </script>
@@ -25,27 +30,27 @@ const iconChange = ()=>{
       <span class="logo-txt">dreaMTank株式会社</span>
     </router-link>
     <nav class="nav">
-      <router-link to="/home" class="nav-item" :class="{link_active:'/home' === route.path}" 
+      <router-link to="/home" class="nav-item" :class="{link_active:'/home' === path}" 
       @click="goTo('/home')">
         <span class="nav-item-title">ホーム</span>
         <span>Home</span>
       </router-link>
-      <router-link to="/services" class="nav-item " :class="{link_active:'/services' === route.path}" 
+      <router-link to="/services" class="nav-item " :class="{link_active:'/services' === path}" 
       @click="goTo('/services')">
         <span class="nav-item-title">事業内容</span>
         <span>Services</span>
       </router-link>
-      <router-link to="/company" class="nav-item " :class="{link_active:'/company' === route.path}" 
+      <router-link to="/company" class="nav-item " :class="{link_active:'/company' === path}" 
       @click="goTo('/company')">
         <span class="nav-item-title">企業情報</span>
         <span>Company</span>
       </router-link>
-      <router-link to="/recruit" class="nav-item " :class="{link_active:'/recruit' === route.path}" 
+      <router-link to="/recruit" class="nav-item " :class="{link_active:'/recruit' === path}" 
       @click="goTo('/recruit')">
         <span class="nav-item-title">採用情報</span>
         <span>Recruit</span>
       </router-link>
-      <router-link to="/contact" class="nav-item " :class="{link_active:'/contact' === route.path}" 
+      <router-link to="/contact" class="nav-item " :class="{link_active:'/contact' === path}" 
       @click="goTo('/contact')">
         <span class="nav-item-title">お問い合わせ</span>
         <span>contact</span>
@@ -61,27 +66,27 @@ const iconChange = ()=>{
   </div>
   <aside class="modal" :class="{modal_open:!iconState}">
     <nav class="modal-nav">
-      <router-link class="modal-nav-item" to="/home" :class="{link_active:'/home' === route.path}"
+      <router-link class="modal-nav-item" to="/home" :class="{link_active:'/home' === path}"
       @click="goTo('/home')">
         <span class="modal-nav-item-title">ホーム</span>
         <span>Home</span>
       </router-link>
-      <router-link class="modal-nav-item" to="/services" :class="{link_active:'/services' === route.path}"
+      <router-link class="modal-nav-item" to="/services" :class="{link_active:'/services' === path}"
       @click="goTo('/services')">
         <span class="modal-nav-item-title">事業内容</span>
         <span>Services</span>
       </router-link>
-      <router-link class="modal-nav-item" to="/company" :class="{link_active:'/company' === route.path}"
+      <router-link class="modal-nav-item" to="/company" :class="{link_active:'/company' === path}"
       @click="goTo('/company')">
         <span class="modal-nav-item-title">企業情報</span>
         <span>Company</span>
       </router-link>
-      <router-link class="modal-nav-item" to="/recruit" :class="{link_active:'/recruit' === route.path}"
+      <router-link class="modal-nav-item" to="/recruit" :class="{link_active:'/recruit' === path}"
       @click="goTo('/recruit')">
         <span class="modal-nav-item-title">採用情報</span>
         <span>Recruit</span>
       </router-link>
-      <router-link class="modal-nav-item" to="/contact" :class="{link_active:'/contact' === route.path}"
+      <router-link class="modal-nav-item" to="/contact" :class="{link_active:'/contact' === path}"
       @click="goTo('/contact')">
         <span class="modal-nav-item-title"></span>
         <span></span>
