@@ -33,7 +33,7 @@ const path = computed(()=>{
           <el-breadcrumb-item class="bread-breadcrumb-item" :to="List.path">
             {{ List.title}}
           </el-breadcrumb-item>
-          <el-breadcrumb-item class="bread-breadcrumb-item">
+          <el-breadcrumb-item class="bread-breadcrumb-item" v-if="List.child">
             {{ List.child[path-1] }}
           </el-breadcrumb-item>
         </el-breadcrumb>
