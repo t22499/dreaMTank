@@ -1,4 +1,7 @@
 <script setup>
+let  googleMapEmbedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6425.395152456146!2d138.55440075561017!3d36.368103591937036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601dd1e1ee2be0ef%3A0x16d8ddc9db507d82!2z44CSMzg5LTAxMTEg6ZW36YeO55yM5YyX5L2Q5LmF6YOh6Lu95LqV5rKi55S66ZW35YCJ5Y2D44Kx5rud6KW_5Yy677yV77yZ77yT77yT4oiS77yV!'
+let  googleMapEmbedUrl2 = "https://maps.google.com/maps?q=〒224-0003 神奈川県横浜市中川中央1-35-16 マイキャッスルセンター北202室&t=m&z=15&output=embed&iwloc=near&region=JP"
+
 </script>
 
 <template>
@@ -38,6 +41,26 @@
             </tr>
           </tbody>
         </table>
+        <div class="google-map">
+          <iframe
+            width="100%"
+            height="400"
+            :src="googleMapEmbedUrl"
+            frameborder="0"
+            style="border:0"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="google-map">
+          <iframe
+            width="100%"
+            height="400"
+            :src="googleMapEmbedUrl2"
+            frameborder="0"
+            style="border:0"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </section>
   </div>
@@ -121,6 +144,9 @@
             }
           }
         }
+      }
+      .google-map {
+        width: 100%;
       }
     }
   }
@@ -209,6 +235,9 @@
             }
           }
         }
+      }
+      .google-map {
+        width: 100%;
       }
     }
   }
